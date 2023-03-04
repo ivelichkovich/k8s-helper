@@ -1,0 +1,1 @@
+# TODO, link to kubernetes docs and my personal quick start 
