@@ -43,10 +43,11 @@ Just add this file as `pre-commit` in `.git/hooks` and make sure it's executable
 #!/bin/bash
 
 #pre commit hook that runs custom import ordering for kubernetes
-#custom ordering is zero-path deps, then space, then other deps, then space, then k8s.io deps
+#custom import ordering is zero-path deps, then space, then other deps, then space, then k8s.io deps
 for changedFile in $(git diff --name-only --cached --relative)
 do
-	goimports -w -local k8s.io $changedFile
+	goimports -w -local k8s.io $changedFile || true
+	go fmt $changedFile || true
 	git add $changedFile
 done
 ```

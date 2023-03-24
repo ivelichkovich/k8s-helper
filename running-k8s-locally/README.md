@@ -1,8 +1,14 @@
-# TODO: fully document findings and links to k8s docs
+# How to run kubernetes locally
+
+https://github.com/kubernetes/community/blob/master/contributors/devel/development.md for official comprehensive documentation.
+
+https://github.com/kubernetes/community/blob/master/contributors/devel/running-locally.md 
 
 helpful commands for getting setup to run k8s locally and running it for quick testing
 
-You need conatinerd and to configure the cni (along with a couple other thigns I'll pull from k8s docs this is wip)
+You need conatinerd and to configure the cni (along with a couple other thigns I'll pull from k8s docs this is wip), this guide is for running on a linux box
+
+Must install cni to run pods, https://github.com/containerd/containerd/blob/main/script/setup/install-cni
 
 `sudo systemctl stop containerd.service && sudo containerd` on a linux box to run containerd.
 
