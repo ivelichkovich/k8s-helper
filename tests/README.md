@@ -11,7 +11,7 @@ For `Integration Tests` you can use a command similar to `make test-integration 
 
 There are several ways to run E2E tests. This shows how to run them locally with kind.
 
-Install gsutil: https://cloud.google.com/storage/docs/gsutil_install#linux
+Install gsutil: https://cloud.google.com/storage/docs/gsutil_install#linux # only needed if not running local tests
 Install kind: https://kind.sigs.k8s.io/docs/user/quick-start/
 Install kubetest2: https://github.com/kubernetes-sigs/kubetest2
 
@@ -22,4 +22,7 @@ now you can run kubetest2
 
 `kubetest2 kind -v 10 --test ginkgo -- --focus-regex='AdmissionWebhook' --ginkgo-args="--v"`
 
+this will not run the tests you have locally however, so to run them you can use the UseBuiltBinaries flag from the ginkgo runner https://github.com/kubernetes-sigs/kubetest2/blob/master/pkg/testers/ginkgo/ginkgo.go#L39 to point to your binaries after running `make WHAT="test/e2e/e2e.test vendor/github.com/onsi/ginkgo/ginkgo cmd/kubectl"` 
+
+or you can run `make WHAT="test/e2e/e2e.test` and then run `./_output/bin/e2e.test -context kind-kind -ginkgo.focus="AdmissionWebhook" -num-nodes 2` with kubeconfig flags to set the kubeconfig to run your tests. If you don't define the kubeconfig it'll try to use an in-cluster-config and panic.
 

@@ -1,4 +1,15 @@
+# Building the code
+
+you can build the code with `make` if you run into dependency issues you can try
+
+`sudo go env -w GOPROXY=direct` 
+
+`sudo go mod download`
+
+`sudo make`
+
 # How to run kubernetes locally
+
 
 https://github.com/kubernetes/community/blob/master/contributors/devel/development.md for official comprehensive documentation.
 
