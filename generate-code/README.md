@@ -3,7 +3,7 @@
 Kubernetes has a lot of automatically generated code and documentation. This contains some helpful commands and tips when using these generation scripts.
 
 
-External APIs in the staging/src/k8s.io/api directory have protobuf files, the user should update the generated.proto while generated.pb.go, types_swagger_doc_generated.go and zz_generated.deepcopy.go should be left to automation to generate.
+External APIs in the staging/src/k8s.io/api directory have protobuf files, the user should update types.go while generated.proto, generated.pb.go, types_swagger_doc_generated.go and zz_generated.deepcopy.go should be left to automation to generate.
 
 `./hack/update-codegen.sh` from root of kubernetes to run code generation.
 
