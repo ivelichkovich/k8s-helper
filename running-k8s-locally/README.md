@@ -29,3 +29,7 @@ Then I usually open another tab and run
 
 From there it will output instructions for connecting to kube-apiserver with kubectl and you can begin testing locally.
 
+# Using KIND 
+
+https://mikeda.me/how-to-build-custom-kubernetes-control-plane-images-and-test-them-with-kind/
+
